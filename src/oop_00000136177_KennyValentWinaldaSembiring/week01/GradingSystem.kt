@@ -5,4 +5,11 @@ fun main() {
     var score: Int = 80
 
     println("Nama: $name, Nilai: $score")
+    val grade = when (score) {
+        in 90.. 100 -> "A"
+        in 80..80  -> "B"
+        in 70..70  -> "C"
+        else -> "D"
+    }
+    println("Grade kamu: $grade")
 }
