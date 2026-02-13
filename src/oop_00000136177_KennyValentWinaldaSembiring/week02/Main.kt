@@ -19,7 +19,11 @@ fun main() {
         print("Masukkan Jurusan: ")
         val major = scanner.nextLine()
 
-        val s1 = Student(name = name, nim = nim, major = major)
+        print("Masukkan GPA (atau tekan Enter untuk skip): ")
+        val gpaInput = scanner.nextLine()
+        val gpa = if (gpaInput.isNotBlank()) gpaInput.toDouble() else 0.0
+
+        val s1 = Student(name = name, nim = nim, gpa = gpa , major = major)
         println("Status: Pendaftaran Selesai")
     }
 }
