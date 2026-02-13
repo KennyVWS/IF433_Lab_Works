@@ -2,7 +2,7 @@ package oop_00000136177_KennyValentWinaldaSembiring.week02
 
 class Enemy (
     val NameMusuh: String,
-    var HpEnemy: Int = 100
+    var HpEnemy: Int
 )
 
 class Hero (
