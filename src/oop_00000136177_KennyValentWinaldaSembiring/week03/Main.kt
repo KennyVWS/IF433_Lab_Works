@@ -1,10 +1,13 @@
 package oop_00000136177_KennyValentWinaldaSembiring.week03
 
 fun main() {
-    val w = Weapon("Excalibur")
+    val player = Player("Kenny")
 
-    w.damage = -50
-    w.damage = 9999
-    println(w.damage)
-    println(w.tier)
+    // println(player.xp) //Ini bakal error
+
+    player.addXp(50)
+    println("${player.level}")
+
+    player.addXp(60)
+    println("${player.level}")
 }
