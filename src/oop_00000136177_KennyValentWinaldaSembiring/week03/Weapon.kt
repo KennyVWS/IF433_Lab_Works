@@ -5,7 +5,7 @@ class Weapon(val name: String) {
         set(value) {
             when {
                 value < 0 -> {
-                    println("Warning: damage cannot be negative."
+                    println("Warning: damage cannot be negative.")
                 }
                 value > 1000 -> {
                     println("Damage cannot be higher than 1000.")
@@ -19,7 +19,7 @@ class Weapon(val name: String) {
 
 
     val tier: String
-    get() = when (damage) {
+    get() = when {
         damage > 800 -> "Legendary Tier"
         damage> 500 -> "Epic Tier"
         else -> "Common"
