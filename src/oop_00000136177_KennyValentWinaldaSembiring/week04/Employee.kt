@@ -7,4 +7,6 @@ open class Employee (val name: String, val baseSalary: Int) {
     open fun calculateBonus(): Int {
         return (baseSalary * 10) / 100
     }
+
+    class
 }
