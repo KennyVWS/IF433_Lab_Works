@@ -1,14 +1,21 @@
 package oop_00000136177_KennyValentWinaldaSembiring.week04
 
 fun main() {
-
-    val tesla = Car.ElectricCar(
-        brand = "Tesla",
-        numberOfDoors = 4,
-        batteryCapacity = 85
+    val manager = Manager(
+        name = "Andi",
+        baseSalary = 100000
     )
-    tesla.openTrunk()
-    tesla.honk()
-    tesla.accelerate()
+
+    val developer = Developer(
+        name = "Willbert",
+        baseSalary = 500000,
+        programmingLanguage = "Kotlin"
+    )
+
+    manager.work()
+    println("Bonus Manager: Rp ${manager.calculateBonus()}")
+
+    developer.work()
+    println("Bonus Developer: Rp ${developer.calculateBonus()}")
 
 }
