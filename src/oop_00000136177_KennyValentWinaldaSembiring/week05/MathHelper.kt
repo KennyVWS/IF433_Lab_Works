@@ -11,3 +11,9 @@ fun hitungLuas(panjang: Int, lebar: Int): Int{
 fun hitungLuas(jariJari: Double): Double {
     return 3.14 * jariJari * jariJari
 }
+
+fun main() {
+    println(hitungLuas(4))
+    println(hitungLuas(5, 3))
+    println(hitungLuas(7.0))
+}
