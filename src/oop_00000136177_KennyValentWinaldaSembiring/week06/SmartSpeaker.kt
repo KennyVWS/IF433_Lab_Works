@@ -6,11 +6,11 @@ class SmartSpeaker(
 ) : SmartDevice, Switchable {
 
     override fun turnOn() {
-        println("$name lamp is turned on")
+        println("$name speaker is turned on")
     }
 
     override fun turnOff() {
-        println("$name lamp is turned off")
+        println("$name speaker is turned off")
     }
     fun playMusic(song: String) {
         println("Memutar lagu $song dari spotify")
