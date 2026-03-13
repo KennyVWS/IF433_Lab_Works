@@ -6,7 +6,7 @@ interface SmartDevice {
 }
 
 interface Switchable {
-     fun turnon()
+     fun turnOn()
      fun turnOff()
 }
 
