@@ -1,7 +1,7 @@
 package oop_00000136177_KennyValentWinaldaSembiring.week06
 
 interface Clickable {
-    val name: String: String
+    val name: String
 
     fun click()
 
