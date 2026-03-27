@@ -1,7 +1,12 @@
 package oop_00000136177_KennyValentWinaldaSembiring.week07
 
 fun main() {
-    val client = NetworkClient("https://api.umn.ac.id")
+        println("=== TEST SINGLETON ===")
+        println("Status: ${DatabaseManager.connectionStatus}")
+        DatabaseManager.connect()
 
-    println("Client berhasil dibuat")
+        println("\n=== TEST COMPANION OBJECT ===")
+        val client = NetworkClient.createClient()
+        client.connect()
 }
+
