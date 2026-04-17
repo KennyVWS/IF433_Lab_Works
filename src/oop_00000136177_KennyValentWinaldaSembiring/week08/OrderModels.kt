@@ -1,6 +1,5 @@
 package oop_00000136177_KennyValentWinaldaSembiring.week08
 
-import sun.jvm.hotspot.debugger.Address
 
 class City(val name: String)
 class Address(val city: City?)
