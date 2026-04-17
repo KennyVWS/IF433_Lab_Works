@@ -1,5 +1,6 @@
 package oop_00000136177_KennyValentWinaldaSembiring.week08
 
+
 class ApiParser {
     fun parseProduct(rawJson: Map<String, Any?>): Product? {
         val id = requireNotNull(rawJson["id"] as? Int) {"Api invalid: Missing ID"}
@@ -9,14 +10,25 @@ class ApiParser {
         return when (type) {
             "ELECTRONIC" -> {
                 val warranty = rawJson["warranty"] as? Int ?: 12
-                Product.Electronic(id, name, warrantyMonths = warranty)
+                Product.Electronic(id="", name, warrantyMonths = warranty)
             }
             "CLOTHING" -> {
                 val size = rawJson["size"] as? String ?: "All Size"
-                Product.Clothing(id, name, size = size)
+                Product.Clothing(id="", name, size = size)
             } else -> {
                 null
             }
         }
+    }
+
+    fun checkout(product: Product) {
+        val id = when (product) {
+            is Product.Clothing -> product.id
+            is Product.Electronic -> product.id
+        }
+        val paymentService = JavaPaymentService()
+        val transactionId = paymentService.processPayment(id)!!
+        println("transactionId : $transactionId")
+
     }
 }
