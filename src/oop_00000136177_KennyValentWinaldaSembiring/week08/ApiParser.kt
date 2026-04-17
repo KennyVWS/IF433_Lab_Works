@@ -10,11 +10,11 @@ class ApiParser {
         return when (type) {
             "ELECTRONIC" -> {
                 val warranty = rawJson["warranty"] as? Int ?: 12
-                Product.Electronic(id="", name, warrantyMonths = warranty)
+                Product.Electronic(id, name, warrantyMonths = warranty)
             }
             "CLOTHING" -> {
                 val size = rawJson["size"] as? String ?: "All Size"
-                Product.Clothing(id="", name, size = size)
+                Product.Clothing(id, name, size = size)
             } else -> {
                 null
             }
@@ -27,7 +27,7 @@ class ApiParser {
             is Product.Electronic -> product.id
         }
         val paymentService = JavaPaymentService()
-        val transactionId = paymentService.processPayment(id)!!
+        val transactionId = paymentService.processPayment(id.toString())!!
         println("transactionId : $transactionId")
 
     }

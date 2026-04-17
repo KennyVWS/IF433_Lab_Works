@@ -40,12 +40,23 @@ fun main() {
             val product = parser.parseProduct(raw)
 
             product?.let {
+                val info = when(it) {
+                    is Product.Electronic -> "Processing: ${it.name} (Warranty ${it.warrantyMonths})"
+                    is Product.Clothing -> "Processing: ${it.name} (Size ${it.size})"
+                }
+                val details = when(it) {
+                    is Product.Electronic -> "(Warranty ${it.warrantyMonths})"
+                    is Product.Clothing -> "(Size ${it.size})"
+                }
+                println("Processing: ${it.name} $details")
+
                 parser.checkout(it)
-            } ?: println("Log: Skip item dengan tipe tidak dikenal.")
+            } ?: println("Log: [FOOD] di-skip (Tipe produk tidak didukung).")
 
         } catch (e: IllegalArgumentException) {
-            println("Log Peringatan: Data korup ditemukan! Reason: ${e.message}")
+            println("Log: Exception ditangkap untuk data korup! -> ${e.message}")
         }
+        println("-----------------------------------")
     }
 
     println("--- Proses Selesai ---")
