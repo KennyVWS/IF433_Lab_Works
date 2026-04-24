@@ -24,3 +24,10 @@ val tradeHistory: List<TradeLog> = listOf(
         .map {
             "WIN [${it.pair} - ${it.position}]: ${it.roe} ROE (LEV: ${it.leverage})"
         }
+
+    val worstPerformersString = tradeHistory
+        .sortedBy { it.roe }
+        .map {
+            "LOSS [${it.pair} - ${it.position}]: ${it.roe} ROE (LEV: ${it.leverage})"
+
+        }
