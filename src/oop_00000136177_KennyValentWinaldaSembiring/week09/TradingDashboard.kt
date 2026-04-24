@@ -27,6 +27,7 @@ val tradeHistory: List<TradeLog> = listOf(
         }
 
     val worstPerformersString = tradeHistory
+        .filter { it.roe < 0}
         .sortedBy { it.roe }
         .map {
             "LOSS [${it.pair} - ${it.position}]: ${it.roe} ROE (LEV: ${it.leverage})"
@@ -40,6 +41,13 @@ val tradeHistory: List<TradeLog> = listOf(
 fun main() {
     println("\n=== CRYPTO TRADING DASHBOARD ===\n")
     topPerformersString.forEach {
+        println(it)
+    }
+
+    worstPerformersString.forEach {
+        println(it)
+    }
+    uniquePairs.forEach {
         println(it)
     }
 }
