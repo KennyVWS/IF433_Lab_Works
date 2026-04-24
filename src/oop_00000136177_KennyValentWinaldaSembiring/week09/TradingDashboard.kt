@@ -13,20 +13,20 @@ val tradeHistory: List<TradeLog> = listOf(
     val closedTrades = tradeHistory
         .filter { it.status == "CLOSED" }
 
-    val winningTrades = tradeHistory
+    val winningTrades = closedTrades
             .filter { it.roe > 0}
 
-    val losingTrades = tradeHistory
+    val losingTrades = closedTrades
         .filter { it.roe < 0 }
 
-    val topPerformersString = tradeHistory
+    val topPerformersString = closedTrades
         .filter { it.roe > 0}
         .sortedByDescending { it.roe }
         .map {
             "WIN [${it.pair} - ${it.position}]: ${it.roe} ROE (LEV: ${it.leverage})"
         }
 
-    val worstPerformersString = tradeHistory
+    val worstPerformersString = closedTrades
         .filter { it.roe < 0}
         .sortedBy { it.roe }
         .map {
@@ -34,7 +34,7 @@ val tradeHistory: List<TradeLog> = listOf(
 
         }
 
-    val uniquePairs = tradeHistory
+    val uniquePairs = closedTrades
         .map { it.pair }
         .toSet()
 
