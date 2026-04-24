@@ -18,3 +18,9 @@ val tradeHistory: List<TradeLog> = listOf(
 
     val losingTrades = tradeHistory
         .filter { it.roe < 0 }
+
+    val topPerformersString = tradeHistory
+        .sortedByDescending { it.roe }
+        .map {
+            "WIN [${it.pair} - ${it.position}]: ${it.roe} ROE (LEV: ${it.leverage})"
+        }
