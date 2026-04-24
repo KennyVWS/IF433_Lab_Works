@@ -31,3 +31,7 @@ val tradeHistory: List<TradeLog> = listOf(
             "LOSS [${it.pair} - ${it.position}]: ${it.roe} ROE (LEV: ${it.leverage})"
 
         }
+
+    val uniquePairs = tradeHistory
+        .map { it.pair }
+        .toSet()
