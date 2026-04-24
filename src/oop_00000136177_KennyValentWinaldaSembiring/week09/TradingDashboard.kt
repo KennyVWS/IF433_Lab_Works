@@ -12,3 +12,6 @@ val tradeHistory: List<TradeLog> = listOf(
 )
     val closedTrades = tradeHistory
         .filter { it.status == "CLOSED" }
+
+    val winningTrades = tradeHistory
+            .filter { it.roe > 0}
