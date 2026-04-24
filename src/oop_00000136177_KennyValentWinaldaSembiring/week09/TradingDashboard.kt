@@ -15,3 +15,6 @@ val tradeHistory: List<TradeLog> = listOf(
 
     val winningTrades = tradeHistory
             .filter { it.roe > 0}
+
+    val losingTrades = tradeHistory
+        .filter { it.roe < 0 }
