@@ -29,8 +29,8 @@ fun main() {
     println("=== Transactions ===")
 
     txRepo.getAll().forEach { tx ->
-        println("Transaction: ${tx.id}")
+        println("Transaction: ${tx.name}")
         println("Amount: ${tx.amount}")
         println()
     }
-}
+    }

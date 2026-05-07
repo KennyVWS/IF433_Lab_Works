@@ -1,9 +1,5 @@
 package oop_00000136177_KennyValentWinaldaSembiring.week10
 
-data class Coin(
-    override val name: String,
-    val price: Double
-) : HasName
 
 interface HasName {
     val name: String
