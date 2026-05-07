@@ -1,6 +1,12 @@
 package oop_00000136177_KennyValentWinaldaSembiring.week10
 
-class WalletRepository<T> {
+
+interface HasName {
+    val name: String
+}
+
+class WalletRepository<T : Any> {
+
     private val items = mutableListOf<T>()
 
     fun add(item: T) {
@@ -8,6 +14,13 @@ class WalletRepository<T> {
     }
 
     fun getAll(): List<T> {
-        return items.toList()
+        return items
+    }
+
+    fun searchByName(keyword: String): List<T> {
+        return items.filter {
+            it is HasName &&
+                    it.name.contains(keyword, ignoreCase = true)
+        }
     }
 }
