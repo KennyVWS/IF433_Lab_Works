@@ -16,6 +16,13 @@ fun main() {
         "200 OK",
         coinRepo.getAll()
     )
+    println("Status: ${response.status}")
 
+
+    response.data.forEach { coin ->
+        println("Coin: ${coin.name}")
+        println("Price: ${coin.price}")
+        println()
+    }
     println(response)
 }
