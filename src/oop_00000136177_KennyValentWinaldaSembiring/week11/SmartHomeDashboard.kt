@@ -4,11 +4,21 @@ fun main() {
     val homeDevices = mutableListOf<SmartDevice>()
 
     SmartDevice(
-        name = "Philips WiZ Living Room"
-        category = "Lighting"
-        isOnline = true
-        powerLoad = 12
+        "Philips WiZ Living Room",
+        "Lighting",
+        true,
+        12
     ).also {
+        homeDevices.add(it)
+    }
+    SmartDevice(
+        "Ezviz Outdoor",
+        "Camera"
+    ).apply {
+        isOnline = true
+        powerLoad = 5
+    }.also {
+        println("(LOG) Kamera terhubung")
         homeDevices.add(it)
     }
 }
