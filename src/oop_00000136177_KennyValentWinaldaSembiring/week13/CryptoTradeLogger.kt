@@ -23,6 +23,7 @@ fun fromCsvTrade(line: String): TradeRecord? {
             pnl = tokens[4].trim().toDouble()
         )
     } catch (e: Exception) {
+        println("(Log) Data korup diabaikan: $line")
         null
     }
 }
