@@ -15,8 +15,6 @@ fun TradeRecord.toCsv(): String {
 fun fromCsvTrade(line: String): TradeRecord? {
     return try {
         val tokens = line.split(",")
-        if (tokens.size != 5) return null
-
         TradeRecord(
             id = tokens[0].trim().toInt(),
             symbol = tokens[1].trim(),
