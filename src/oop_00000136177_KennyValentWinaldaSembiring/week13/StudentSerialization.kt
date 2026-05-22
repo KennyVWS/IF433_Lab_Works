@@ -34,4 +34,3 @@ fun main() {
     println("=== LOADED STUDENT DATA ===")
     loaded.forEach { println(it) }
     }
-}
