@@ -68,4 +68,10 @@ fun main() {
     loadedTrades.forEach { trade ->
         println("ID: ${trade.id} | ${trade.symbol} (${trade.type}) | Margin: \$${trade.margin} | PnL: \$${trade.pnl}")
     }
+    val loadedData = loadTrades(filePath)
+    val totalPnl = loadedData.sumOf { it.pnl }
+    println("\n=== Ringkasan Performa Portofolio ===")
+    println("Total Transaksi Valid : ${loadedData.size}")
+    println("Total PnL Bersih      : \$${String.format("%.2Fi", totalPnl)}")
+
 }
