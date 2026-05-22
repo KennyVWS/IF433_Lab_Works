@@ -60,8 +60,11 @@ fun main() {
     val filePath = "crypto_trades.csv"
     saveTrades(mockTrades, filePath)
 
+    File(filePath).appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
+
     val loadedTrades = loadTrades(filePath)
 
+    println("\n=== Daftar Transaksi Terdaftar (Data Korup Otomatis Diabaikan) ===")
     loadedTrades.forEach { trade ->
         println("ID: ${trade.id} | ${trade.symbol} (${trade.type}) | Margin: \$${trade.margin} | PnL: \$${trade.pnl}")
     }
