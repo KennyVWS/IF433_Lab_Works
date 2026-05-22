@@ -48,3 +48,21 @@ fun loadTrades(path: String): List<TradeRecord> {
         emptyList()
     }
 }
+
+fun main() {
+    println("=== Sistem Log Crypto Trade ===")
+    val mockTrades = listOf(
+        TradeRecord(id = 1, symbol = "BTCUSDT", type = "LONG", margin = 150.0, pnl = 45.25),
+        TradeRecord(id = 2, symbol = "ETHUSDT", type = "SHORT", margin = 80.0, pnl = -12.50),
+        TradeRecord(id = 3, symbol = "SOLUSDT", type = "LONG", margin = 50.0, pnl = 8.10)
+    )
+
+    val filePath = "crypto_trades.csv"
+    saveTrades(mockTrades, filePath)
+
+    val loadedTrades = loadTrades(filePath)
+
+    loadedTrades.forEach { trade ->
+        println("ID: ${trade.id} | ${trade.symbol} (${trade.type}) | Margin: \$${trade.margin} | PnL: \$${trade.pnl}")
+    }
+}
